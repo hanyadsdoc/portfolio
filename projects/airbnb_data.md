@@ -1,7 +1,7 @@
 ---
-layout: page
+layout: post
 title: "Airbnb data analysis"
-permalink: /projects/airbnb_data
+# permalink: /projects/airbnb_data
 ---
 
 [#Airbnb data analysis]()
