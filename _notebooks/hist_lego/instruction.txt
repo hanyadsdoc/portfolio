@@ -1,0 +1,5 @@
+The team responsible for the Star Wars partnership has asked for specific information in preparation for their meeting:
+
+What percentage of all licensed sets ever released were Star Wars themed? Save your answer as a variable the_force, as an integer (e.g. 25).
+
+In which year was the highest number of Star Wars sets released? Save your answer as a variable new_era, as an integer (e.g. 2012).

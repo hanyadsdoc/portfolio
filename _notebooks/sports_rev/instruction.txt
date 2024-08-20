@@ -1,0 +1,11 @@
+In order to complete the project you will need to merge the datasets and drop null values, along with answering the questions below.
+
+What is the volume of products and average revenue for Adidas and Nike products based on listing price quartiles?
+
+Label products priced up to quartile one as "Budget", quartile two as "Average", quartile three as "Expensive", and quartile four as "Elite".
+Store as a pandas DataFrame called adidas_vs_nike containing the following columns: "brand", "price_label", "num_products", and "mean_revenue". All numeric values should be rounded to two decimal places.
+
+Do any differences exist between the word count of a product's description and its mean rating?
+
+Split product description length into bins of 100 characters and calculate the average rating and number of reviews.
+Store the results as a pandas DataFrame called description_lengths containing the following columns: "description_length", "mean_rating", "num_reviews", again rounding numeric values to two decimal places.

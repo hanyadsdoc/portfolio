@@ -1,0 +1,6 @@
+Read in, merge, and clean the four datasets to make a single combined pandas DataFrame.
+
+Create a single pandas DataFrame called employees_final containing:
+Index: employee_id.
+Columns: Ensure the DataFrame contains only the following columns, in the exact order listed: employee_first_name, employee_last_name, employee_country, employee_city, employee_street, employee_street_number, emergency_contact, emergency_contact_number, relationship, monthly_salary, team, title, office, office_country, office_city, office_street, office_street_number.
+Assign employees to offices based on their country. For any columns that begin with office, replace missing data with "Remote".

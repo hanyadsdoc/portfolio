@@ -1,0 +1,2 @@
+Run the load_and_check() function and observe what happens. Follow the printouts to identify and fix any mistakes.
+Review the load_and_check() function for issues. Focus on the two if checks to identify potential problems. You might need to edit both the functions and the underlying data. Modify existing columns if necessary, but don't create new ones. Ensure the function only returns two success messages when completed.
