@@ -6,6 +6,11 @@ title: YH
 # description: >
 #   YH. 
 
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:path/
+
 theme: minima
 
 # Minima specific settings, which are only available from Minima 3.0 onward.
