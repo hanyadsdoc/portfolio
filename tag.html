@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag Filter Page</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Items Tagged with <span id="tag-title"></span></h1>
+    </header>
+
+    <main class="content">
+        <div id="content"></div>
+    </main>
+
+    <footer>
+        <a href="mailto:info@web.com">info@web.com</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </footer>
+
+    <script>
+        const data = [
+            {
+                "title": "Page 1 Title",
+                "link": "page1.html",
+                "tags": ["Tag1", "Tag2"]
+            },
+            {
+                "title": "Page 2 Title",
+                "link": "page2.html",
+                "tags": ["Tag1", "Tag3"]
+            },
+            {
+                "title": "Page 3 Title",
+                "link": "page3.html",
+                "tags": ["Tag2", "Tag4"]
+            },
+            {
+                "title": "Page 4 Title",
+                "link": "page4.html",
+                "tags": ["Tag3", "Tag5"]
+            },
+            {
+                "title": "Page 5 Title",
+                "link": "page5.html",
+                "tags": ["Tag1", "Tag4"]
+            }
+        ];
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const tag = urlParams.get('tag');
+        document.getElementById('tag-title').innerText = tag;
+
+        const filteredData = data.filter(item => item.tags.includes(tag));
+        const contentDiv = document.getElementById('content');
+        filteredData.forEach(item => {
+            const box = document.createElement('div');
+            box.classList.add('text-box');
+            box.innerHTML = `<h3>${item.title}</h3>`;
+            box.onclick = () => window.location.href = item.link;
+            contentDiv.appendChild(box);
+        });
+    </script>
+
+</body>
+</html>

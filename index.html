@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <header>
+        <a href="about.html"><h1 id="main-title">Your Page Title</h1></a>
+        <div id="sub-headings">
+            <a href="data.html"><div class="sub-heading">Data</div></a>
+            <a href="etc.html"><div class="sub-heading">Etc</div></a>
+            <a href="etc2.html"><div class="sub-heading">Etc2</div></a>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="text-box" onclick="location.href='page1.html'">
+            <h3>Page 1 Title</h3>
+            <div class="tags">
+                <span class="tag" onclick="location.href='tag.html?tag=Tag1'">Tag1</span>
+                <span class="tag" onclick="location.href='tag.html?tag=Tag2'">Tag2</span>
+            </div>
+        </div>
+        <div class="text-box" onclick="location.href='page2.html'">
+            <h3>Page 2 Title</h3>
+            <div class="tags">
+                <span class="tag" onclick="location.href='tag.html?tag=Tag1'">Tag1</span>
+                <span class="tag" onclick="location.href='tag.html?tag=Tag3'">Tag3</span>
+            </div>
+        </div>
+        <div class="text-box" onclick="location.href='page3.html'">
+            <h3>Page 3 Title</h3>
+            <div class="tags">
+                <span class="tag" onclick="location.href='tag.html?tag=Tag2'">Tag2</span>
+                <span class="tag" onclick="location.href='tag.html?tag=Tag4'">Tag4</span>
+            </div>
+        </div>
+        <div class="text-box" onclick="location.href='page4.html'">
+            <h3>Page 4 Title</h3>
+            <div class="tags">
+                <span class="tag" onclick="location.href='tag.html?tag=Tag3'">Tag3</span>
+                <span class="tag" onclick="location.href='tag.html?tag=Tag5'">Tag5</span>
+            </div>
+        </div>
+        <div class="text-box" onclick="location.href='page5.html'">
+            <h3>Page 5 Title</h3>
+            <div class="tags">
+                <span class="tag" onclick="location.href='tag.html?tag=Tag1'">Tag1</span>
+                <span class="tag" onclick="location.href='tag.html?tag=Tag4'">Tag4</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="mailto:info@web.com">info@web.com</a>
+        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </footer>
+
+    <script>
+        document.getElementById('main-title').addEventListener('mouseover', function() {
+            this.innerText = '-> About';
+        });
+
+        document.getElementById('main-title').addEventListener('mouseout', function() {
+            this.innerText = 'Your Page Title';
+        });
+
+        const subHeadings = document.querySelectorAll('.sub-heading');
+        subHeadings.forEach(function(heading) {
+            heading.addEventListener('mouseover', function() {
+                this.innerText = '-> ' + this.innerText;
+            });
+
+            heading.addEventListener('mouseout', function() {
+                this.innerText = this.innerText.replace('-> ', '');
+            });
+        });
+
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        });
+    </script>
+
+</body>
+</html>
