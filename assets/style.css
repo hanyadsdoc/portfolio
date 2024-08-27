@@ -21,11 +21,15 @@ header h1 {
     cursor: pointer;
 }
 
+.sub-headings {
+    display: table;
+}
+
 .sub-heading {
     font-size: 18px;
     margin: 15px 0;
     cursor: pointer;
-    display: table;
+    display: table-cell;
     margin-top: 10px;
     margin-bottom: 10px;
 }
