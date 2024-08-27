@@ -30,6 +30,11 @@ header h1 {
     margin-bottom: 10px;
 }
 
+.sub-heading:after {
+    content: '\A';
+    white-space: pre;
+}
+
 .content {
     padding: 20px;
 }
