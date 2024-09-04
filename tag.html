@@ -61,6 +61,7 @@
         filteredData.forEach(item => {
             const box = document.createElement('div');
             box.classList.add('text-box');
+            box.style.width = "100%"; 
             box.innerHTML = `<h3>${item.title}</h3>`;
             box.onclick = () => window.location.href = item.link;
             contentDiv.appendChild(box);
