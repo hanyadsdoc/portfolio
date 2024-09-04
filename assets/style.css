@@ -39,7 +39,7 @@ header h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 0px 20px 15%;
+    padding: 20px 0px 20px 0px;
     flex-direction: column;
 }
 
@@ -47,7 +47,7 @@ header h1 {
     margin: 20px 0;
     padding: 20px;
     border: 1px solid #ddd;
-    width: 70%;
+    width: 50%;
     box-sizing: border-box;
     cursor: pointer;
 }
