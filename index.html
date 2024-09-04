@@ -64,21 +64,21 @@
 
     <script>
         document.getElementById('main-title').addEventListener('mouseover', function() {
-            this.innerText = '-> About';
+            this.innerText = '→ About';
         });
 
         document.getElementById('main-title').addEventListener('mouseout', function() {
-            this.innerText = 'Your Page Title';
+            this.innerText = 'Yoon Han';
         });
 
         const subHeadings = document.querySelectorAll('.sub-heading');
         subHeadings.forEach(function(heading) {
             heading.addEventListener('mouseover', function() {
-                this.innerText = '-> ' + this.innerText;
+                this.innerText = '→ ' + this.innerText;
             });
 
             heading.addEventListener('mouseout', function() {
-                this.innerText = this.innerText.replace('-> ', '');
+                this.innerText = this.innerText.replace('→ ', '');
             });
         });
 
