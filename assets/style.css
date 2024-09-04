@@ -36,7 +36,11 @@ header h1 {
 }
 
 .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px 0px 20px 15%;
+    flex-direction: column;
 }
 
 .text-box {
@@ -65,6 +69,12 @@ header h1 {
 .tag {
     margin-right: 10px;
     cursor: pointer;
+}
+
+.notebook-frame {
+    width: 80%;
+    height: 80vh; /* 80% of the viewport height */
+    border: none;
 }
 
 footer {
