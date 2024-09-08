@@ -25,6 +25,8 @@ header h1 {
 
 .sub-headings {
     display: table;
+
+    display: none;
 }
 
 .sub-heading {
