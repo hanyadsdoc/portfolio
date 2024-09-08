@@ -10,7 +10,7 @@
 
     <header  id="header">
         <a href="about.html"><h1 id="main-title">Title</h1></a>
-        <div class="sub-headings" id="sub-headings" style="display: none;">
+        <div class="sub-headings" id="sub-headings">
             <a href="data.html"><div class="sub-heading">Data</div></a>
             <a href="etc.html"><div class="sub-heading">Etc</div></a>
             <a href="etc2.html"><div class="sub-heading">Etc2</div></a>
@@ -453,28 +453,55 @@
         const subHeadingsContainer = document.getElementById('sub-headings');
         const subHeadings = document.querySelectorAll('.sub-heading a');
 
-        // Show sub-headings on mouse over of header
-        header.addEventListener('mouseover', function() {
+        // Function to show sub-headings
+        function showSubHeadings() {
             mainTitle.innerText = '>>> About';
-            subHeadingsContainer.style.display = 'block'; // Show sub-headings
-        });
+            subHeadingsContainer.style.display = 'block';
+        }
 
-        // Hide sub-headings on mouse out of header
-        header.addEventListener('mouseout', function() {
+        // Function to hide sub-headings
+        function hideSubHeadings() {
             mainTitle.innerText = 'Title';
-            subHeadingsContainer.style.display = 'none'; // Hide sub-headings
-        });
+            subHeadingsContainer.style.display = 'none';
+        }
 
-        // Handle mouse over and mouse out for each sub-heading link
-        subHeadings.forEach(function(link) {
-            link.addEventListener('mouseover', function() {
-                this.innerText = '>>> ' + this.innerText;
+        // Detect if the user is on a mobile device
+        const isMobileDevice = 'ontouchstart' in document.documentElement;
+
+        if (isMobileDevice) {
+            // On mobile devices, toggle sub-headings on touch
+            mainTitle.addEventListener('touchstart', function() {
+                if (subHeadingsContainer.style.display === 'none') {
+                    showSubHeadings();
+                } else {
+                    hideSubHeadings();
+                }
             });
 
-            link.addEventListener('mouseout', function() {
-                this.innerText = this.innerText.replace('>>> ', '');
+            // Prevent accidental link activation during scrolling
+            subHeadings.forEach(function(link) {
+                link.addEventListener('touchstart', function(event) {
+                    event.stopPropagation();
+                });
             });
-        });
+        } else {
+            // Show sub-headings on mouse over for non-mobile devices
+            header.addEventListener('mouseover', showSubHeadings);
+
+            // Hide sub-headings on mouse out for non-mobile devices
+            header.addEventListener('mouseout', hideSubHeadings);
+
+            // Handle mouse over and mouse out for each sub-heading link
+            subHeadings.forEach(function(link) {
+                link.addEventListener('mouseover', function() {
+                    this.innerText = '>>> ' + this.innerText;
+                });
+
+                link.addEventListener('mouseout', function() {
+                    this.innerText = this.innerText.replace('>>> ', '');
+                });
+            });
+        }
 
 
         // tags
