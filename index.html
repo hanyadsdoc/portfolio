@@ -450,7 +450,7 @@
         // Get references to main title and sub-headings
         const mainTitle = document.getElementById('main-title');
         const subHeadingsContainer = document.getElementById('sub-headings');
-        const subHeadings = document.querySelectorAll('.sub-heading');
+        const subHeadings = document.querySelectorAll('.sub-heading a');
 
         // Show sub-headings on mouse over
         mainTitle.addEventListener('mouseover', function() {
@@ -460,17 +460,17 @@
 
         // Hide sub-headings on mouse out
         mainTitle.addEventListener('mouseout', function() {
-            this.innerText = 'YH';
+            this.innerText = 'Title';
             subHeadingsContainer.style.display = 'none'; // Hide sub-headings
         });
 
         // Handle mouse over and mouse out for each sub-heading
-        subHeadings.forEach(function(heading) {
-            heading.addEventListener('mouseover', function() {
+        subHeadings.forEach(function(link) {
+            link.addEventListener('mouseover', function() {
                 this.innerText = '>>> ' + this.innerText;
             });
 
-            heading.addEventListener('mouseout', function() {
+            link.addEventListener('mouseout', function() {
                 this.innerText = this.innerText.replace('>>> ', '');
             });
         });
