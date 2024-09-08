@@ -10,11 +10,11 @@
 
     <header>
         <a href="about.html"><h1 id="main-title">Yoon Han</h1></a>
-        <!-- <div class="sub-headings">
+        <div class="sub-headings" id="sub-headings" style="display: none;">
             <a href="data.html"><div class="sub-heading">Data</div></a>
             <a href="etc.html"><div class="sub-heading">Etc</div></a>
             <a href="etc2.html"><div class="sub-heading">Etc2</div></a>
-        </div> -->
+        </div>
     </header>
 
     <main class="content">
@@ -428,25 +428,63 @@
     </footer> -->
 
     <script>
-        document.getElementById('main-title').addEventListener('mouseover', function() {
-            this.innerText = '→ About';
-        });
+        // document.getElementById('main-title').addEventListener('mouseover', function() {
+        //     this.innerText = '>>> About';
+        // });
 
-        document.getElementById('main-title').addEventListener('mouseout', function() {
-            this.innerText = 'Yoon Han';
-        });
+        // document.getElementById('main-title').addEventListener('mouseout', function() {
+        //     this.innerText = 'Yoon Han';
+        // });
 
+        // const subHeadings = document.querySelectorAll('.sub-heading');
+        // subHeadings.forEach(function(heading) {
+        //     heading.addEventListener('mouseover', function() {
+        //         this.innerText = '>>> ' + this.innerText;
+        //     });
+
+        //     heading.addEventListener('mouseout', function() {
+        //         this.innerText = this.innerText.replace('>>> ', '');
+        //     });
+        // });
+
+        // Get references to main title and sub-headings
+        const mainTitle = document.getElementById('main-title');
+        const subHeadingsContainer = document.getElementById('sub-headings');
         const subHeadings = document.querySelectorAll('.sub-heading');
+
+        // Show sub-headings on mouse over
+        mainTitle.addEventListener('mouseover', function() {
+            this.innerText = '>>> About';
+            subHeadingsContainer.style.display = 'block'; // Show sub-headings
+        });
+
+        // Hide sub-headings on mouse out
+        mainTitle.addEventListener('mouseout', function() {
+            this.innerText = 'YH';
+            subHeadingsContainer.style.display = 'none'; // Hide sub-headings
+        });
+
+        // Handle mouse over and mouse out for each sub-heading
         subHeadings.forEach(function(heading) {
             heading.addEventListener('mouseover', function() {
-                this.innerText = '→ ' + this.innerText;
+                this.innerText = '>>> ' + this.innerText;
             });
 
             heading.addEventListener('mouseout', function() {
-                this.innerText = this.innerText.replace('→ ', '');
+                this.innerText = this.innerText.replace('>>> ', '');
             });
         });
 
+        // Prevent sub-headings from disappearing if hovering over them
+        subHeadingsContainer.addEventListener('mouseover', function() {
+            subHeadingsContainer.style.display = 'block'; // Keep sub-headings visible
+        });
+
+        subHeadingsContainer.addEventListener('mouseout', function() {
+            subHeadingsContainer.style.display = 'none'; // Hide sub-headings when mouse leaves
+        });
+
+        // tags
         document.querySelectorAll('.tag').forEach(tag => {
             tag.addEventListener('click', function(event) {
                 event.stopPropagation();
