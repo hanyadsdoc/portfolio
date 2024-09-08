@@ -447,24 +447,25 @@
         //     });
         // });
 
-        // Get references to main title and sub-headings
+        // Get references to main title, header, and sub-headings
         const mainTitle = document.getElementById('main-title');
+        const header = document.getElementById('header');
         const subHeadingsContainer = document.getElementById('sub-headings');
         const subHeadings = document.querySelectorAll('.sub-heading a');
 
-        // Show sub-headings on mouse over
-        mainTitle.addEventListener('mouseover', function() {
-            this.innerText = '>>> About';
+        // Show sub-headings on mouse over of header
+        header.addEventListener('mouseover', function() {
+            mainTitle.innerText = '>>> About';
             subHeadingsContainer.style.display = 'block'; // Show sub-headings
         });
 
-        // Hide sub-headings on mouse out
-        mainTitle.addEventListener('mouseout', function() {
-            this.innerText = 'Title';
+        // Hide sub-headings on mouse out of header
+        header.addEventListener('mouseout', function() {
+            mainTitle.innerText = 'Title';
             subHeadingsContainer.style.display = 'none'; // Hide sub-headings
         });
 
-        // Handle mouse over and mouse out for each sub-heading
+        // Handle mouse over and mouse out for each sub-heading link
         subHeadings.forEach(function(link) {
             link.addEventListener('mouseover', function() {
                 this.innerText = '>>> ' + this.innerText;
@@ -475,14 +476,6 @@
             });
         });
 
-        // Prevent sub-headings from disappearing if hovering over them
-        subHeadingsContainer.addEventListener('mouseover', function() {
-            subHeadingsContainer.style.display = 'block'; // Keep sub-headings visible
-        });
-
-        subHeadingsContainer.addEventListener('mouseout', function() {
-            subHeadingsContainer.style.display = 'none'; // Hide sub-headings when mouse leaves
-        });
 
         // tags
         document.querySelectorAll('.tag').forEach(tag => {
