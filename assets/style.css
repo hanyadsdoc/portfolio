@@ -13,6 +13,8 @@ a {
 header {
     padding: 20px;
     text-align: left;
+
+    position: absolute; top: 0; width: 100%;
 }
 
 header h1 {
@@ -41,6 +43,8 @@ header h1 {
     align-items: center;
     padding: 20px 0px 20px 0px;
     flex-direction: column;
+
+    margin-top: 60px;
 }
 
 .text-box {
