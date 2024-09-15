@@ -81,7 +81,7 @@ header h1 {
 
 .notebook-frame {
     width: 80%;
-    /* height: 80vh; 80% of the viewport height */
+    height: 80vh; /* 80% of the viewport height */
     border: none;
     padding-top: 50px;
 }
